@@ -148,6 +148,7 @@ def commitRecord(ip):
                 "zones/" + option['zone_id'] +
                 "/dns_records?per_page=100&type=" + ip["type"],
                 "GET", option)
+            #print("📜 Current records: " + json.dumps(dns_records))
             identifier = None
             modified = False
             duplicate_ids = []
