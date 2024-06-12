@@ -172,8 +172,9 @@ def commitRecord(ip):
                         "zones/" + option['zone_id'] +
                         "/dns_records/" + identifier,
                         "PUT", option, {}, record)
-                else:                                                                         
-                    print(f"... Record for {fqdn} is up to date. No update needed.")
+                else:
+                    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+                    print(f"... {timestamp} - Record for {fqdn} is up to date. No update needed.")
             else:
                 print("➕ Adding new record " + str(record))
                 response = cf_api(
